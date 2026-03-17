@@ -1,0 +1,49 @@
+name: Cloudflare Pages Go Live
+
+on:
+  schedule:
+    # Trigger a few minutes early, then wait until the exact launch time.
+    # 2026-03-19 07:00 GMT+4 = 2026-03-19 03:00 UTC
+    - cron: "55 2 19 3 *"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for launch time
+        run: |
+          target_epoch=$(date -u -d "2026-03-19 03:00:00" "+%s" 2>/dev/null || true)
+
+          if [ -z "$target_epoch" ]; then
+            target_epoch=$(python3 - <<'PY'
+from datetime import datetime, timezone
+print(int(datetime(2026, 3, 19, 3, 0, 0, tzinfo=timezone.utc).timestamp()))
+PY
+)
+          fi
+
+          while true; do
+            now_epoch=$(date -u "+%s")
+            if [ "$now_epoch" -ge "$target_epoch" ]; then
+              break
+            fi
+
+            sleep_seconds=$((target_epoch - now_epoch))
+            if [ "$sleep_seconds" -gt 30 ]; then
+              sleep 30
+            else
+              sleep "$sleep_seconds"
+            fi
+          done
+
+      - name: Trigger Cloudflare Pages deploy hook
+        env:
+          CLOUDFLARE_PAGES_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$CLOUDFLARE_PAGES_DEPLOY_HOOK" ]; then
+            echo "Missing CLOUDFLARE_PAGES_DEPLOY_HOOK secret"
+            exit 1
+          fi
+
+          curl -fsS -X POST "$CLOUDFLARE_PAGES_DEPLOY_HOOK"

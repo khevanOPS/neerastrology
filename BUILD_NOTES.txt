@@ -1,0 +1,22 @@
+Neer Astrology website update
+
+Applied changes:
+- Larger Neer Astrology / Neer Jyotish branding in header and footer
+- Increased readability across sections with larger heading/body sizes
+- Added English/French site-wide language toggle in header
+- Added Guru message in About section with Read more / Read less
+- Reworked services titles, descriptions and added new services
+- Improved service details modal with clear close button and mobile-friendly scrolling
+- Added full-screen calendar image viewer with close button
+- Added sharpened gallery section from pinned images with full-screen viewer
+- Added hero button: Online Consultation Available
+- Added contact section details for online consultations, required birth details and payment methods
+- Added collage in About section using astrologer-real.jpg and edited_photo_v2.jpg
+
+Important:
+- node_modules and dist were removed from the zip for size and reliability
+- install fresh before running
+
+Commands:
+  npm install
+  npm run dev

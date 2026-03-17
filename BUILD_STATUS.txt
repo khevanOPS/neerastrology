@@ -1,0 +1,24 @@
+Neer Astrology rebuild status
+
+What was fixed
+- Replaced the broken App.tsx with a cleaned, consistent version.
+- Removed the broken Testimonials section and replaced it with a Hindu Lunar Calendar 2026 section.
+- Added the attached Hindu Lunar Calendar image to public/hindu-lunar-calendar-2026.jpeg.
+- Fixed undefined icon usage that caused the blank page.
+- Simplified the services cards to avoid fragile modal logic.
+- Added a Calendar link in the navigation and footer.
+
+Important note about build verification
+- TypeScript compilation succeeded locally in this environment.
+- Full Vite build could not be completed because the uploaded node_modules bundle is incomplete/corrupted.
+- Specifically, the bundled Vite package is missing internal files, so npm scripts that rely on the uploaded node_modules cannot run here.
+
+What you should do locally
+1. Delete node_modules and package-lock.json if needed.
+2. Run npm install.
+3. Run npm run dev.
+
+Suggested commands
+rm -rf node_modules package-lock.json
+npm install
+npm run dev
