@@ -1415,7 +1415,7 @@ function ContactSection({ lang }: { lang: Language }) {
                 </div>
                 <div>
                   <h4 className="mb-1 text-xl font-medium text-[#3D3D3D]">{t.contact.emailTitle}</h4>
-                  <p className="text-lg leading-8 text-[#6B6B6B]">neerasho19@gmail.com<br />neer1360@gmail.com</p>
+                  <p className="text-lg leading-8 text-[#6B6B6B]">neerasho19@gmail.com<br />neer1360@gmail.com<br />neerunjunmotah19@gmail.com</p>
                 </div>
               </div>
 
