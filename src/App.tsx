@@ -1374,13 +1374,15 @@ function ContactSection({ lang }: { lang: Language }) {
     <section id="contact" className="relative bg-[#FAF7F2] py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2">
-          <div>
-            <SectionBadge icon={Phone} label={t.contact.badge} />
-            <h2 className="mt-6 text-5xl font-serif text-[#3D3D3D] lg:text-[3.55rem]">{t.contact.heading}</h2>
-            <p className="mt-5 text-lg leading-8 text-[#6B6B6B] sm:text-xl">{t.contact.description}</p>
+          <div className="text-center lg:text-left">
+            <div className="flex justify-center lg:justify-start">
+              <SectionBadge icon={Phone} label={t.contact.badge} />
+            </div>
+            <h2 className="mx-auto mt-6 max-w-[10ch] text-5xl font-serif text-[#3D3D3D] lg:mx-0 lg:max-w-none lg:text-[3.55rem]">{t.contact.heading}</h2>
+            <p className="mx-auto mt-5 max-w-[28rem] text-lg leading-8 text-[#6B6B6B] sm:text-xl lg:mx-0">{t.contact.description}</p>
 
-            <div className="mt-10 space-y-6">
-              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 shadow-sm">
+            <div className="mx-auto mt-10 max-w-[32rem] space-y-6 lg:mx-0 lg:max-w-none">
+              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 text-left shadow-sm">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#C4705A]/10">
                   <MapPin className="h-5 w-5 text-[#C4705A]" />
                 </div>
@@ -1389,7 +1391,7 @@ function ContactSection({ lang }: { lang: Language }) {
                   <p className="text-lg leading-8 text-[#6B6B6B]">Flat Bunjun No.5, 84 Route Royale,<br />Belle-Rose, Quatre-Bornes, Mauritius</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 shadow-sm">
+              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 text-left shadow-sm">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#C4705A]/10">
                   <MapPin className="h-5 w-5 text-[#C4705A]" />
                 </div>
@@ -1399,7 +1401,7 @@ function ContactSection({ lang }: { lang: Language }) {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 shadow-sm">
+              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 text-left shadow-sm">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#C4705A]/10">
                   <Phone className="h-5 w-5 text-[#C4705A]" />
                 </div>
@@ -1409,7 +1411,7 @@ function ContactSection({ lang }: { lang: Language }) {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 shadow-sm">
+              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 text-left shadow-sm">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#C4705A]/10">
                   <Mail className="h-5 w-5 text-[#C4705A]" />
                 </div>
@@ -1419,7 +1421,7 @@ function ContactSection({ lang }: { lang: Language }) {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 shadow-sm">
+              <div className="flex items-start gap-4 rounded-[1.6rem] bg-white/70 p-5 text-left shadow-sm">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#C4705A]/10">
                   <Clock className="h-5 w-5 text-[#C4705A]" />
                 </div>
@@ -1432,7 +1434,7 @@ function ContactSection({ lang }: { lang: Language }) {
 
             <div className="mt-8">
               <p className="mb-4 text-lg font-medium text-[#3D3D3D]">{t.contact.followUs}</p>
-              <div className="flex gap-4">
+              <div className="flex justify-center gap-4 lg:justify-start">
                 <a href="https://www.facebook.com/neerunjun.motah" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1877F2]/10 transition-colors hover:bg-[#1877F2]/20">
                   <Facebook className="h-5 w-5 text-[#1877F2]" />
                 </a>
